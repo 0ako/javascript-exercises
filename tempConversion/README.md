@@ -4,6 +4,8 @@ Write two functions that convert temperatures from Fahrenheit to Celsius, and vi
 ```
 ftoc(32) // fahrenheit to celsius, should return 0
 
+C = (F − 32) * ​(5/9)
+
 ctof(0) // celsius to fahrenheit, should return 32
 ```
 
