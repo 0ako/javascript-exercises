@@ -8,7 +8,7 @@ let caesar = function(string, shift) {
 
 };
  
-// codeSet variaable: is code < 97? If true: set code at  65 A, if false: set code at 97 a
+// Figure out which codeSet it's in : is code < 97? If A-Z: set code at 65, if a-z: set code at 97
 let codeSet = code => (code < 97 ? 65 : 97)
 
 // function to make modulo work with negative numbers
