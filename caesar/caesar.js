@@ -11,7 +11,7 @@ let caesar = function(string, shift) {
 // Figure out which codeSet it's in : is code < 97? If A-Z: set code at 65, if a-z: set code at 97
 let codeSet = code => (code < 97 ? 65 : 97)
 
-// function to make modulo work with negative numbers
+// function to make modulo work with negative numbers, returns positive remainder
 let mod = (n, m) => (n % m + m) % m;
 
 // function that returns char after its been shifted
@@ -22,12 +22,14 @@ let shiftChar = (char, shift) => {
 
     // if ascii code matches A-Z or a-z,
     if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
-        // Return converted ascii code back to string
+        // Return shifted ascii code back to string after...
         return String.fromCharCode(
-            // mod(n                           , m )
+            // Using modulus function to shift code
                mod(code + shift - codeSet(code), 26) + codeSet(code) 
         );
     }
+    // if ascii code doesn't match A-Z or a-z, i.e. is a punctuation mark, then code wasn't shifted
+    // return shifted string (to the array element)
     return char;
 };
 
