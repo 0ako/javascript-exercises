@@ -5,7 +5,6 @@ let caesar = function(string, shift) {
             .split("") // split string into array 
             .map(char => shiftChar(char, shift)) // apply shiftChar function to every element in array
             .join(""); // join array back to string
-
 };
  
 // Figure out which codeSet it's in : is code < 97? If A-Z: set code at 65, if a-z: set code at 97
